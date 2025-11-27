@@ -1,10 +1,318 @@
+/* ================================
+   ESTILOS GENERALES
+================================ */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
-    text-align: center;
-    padding-top: 50px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F3F3F0;
+  color: #333;
 }
 
-h1 {
-    color: #0066cc;
+/* ================================
+   HEADER
+================================ */
+header, .bienvenida-header {
+  background-color: #5C7A4D;
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.bienvenida-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+nav input {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ================================
+   INICIO – CONTENEDOR PRINCIPAL
+================================ */
+.bienvenida-main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.titulo-principal {
+  text-align: center;
+  font-size: 1.9rem;
+  color: #5C7A4D;
+  font-weight: 600;
+}
+
+/* ================================
+   IMAGEN DE BIENVENIDA
+================================ */
+.imagen-bienvenida {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.imagen-bienvenida img {
+  width: 70%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* ================================
+   BOTÓN PRINCIPAL
+================================ */
+.btn-entrar {
+  display: inline-block;
+  background: #8BAF6A;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 18px;
+}
+
+.btn-entrar:hover {
+  background: #5C7A4D;
+  transform: scale(1.05);
+}
+
+/* ================================
+   PANEL PRINCIPAL (BUSCADOR)
+================================ */
+main {
+  display: grid;
+  grid-template-columns: 200px 1fr 250px;
+  gap: 20px;
+  padding: 20px;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  background-color: #8BAF6A;
+  color: white;
+  border: none;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  background: #5C7A4D;
+}
+
+.menu button.active {
+  background-color: #5C7A4D;
+}
+
+.panel {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.panel.visible {
+  display: block;
+}
+
+/* ================================
+   SUGERENCIAS BARRA DERECHA
+================================ */
+.sugerencias {
+  background-color: #D9E5C4;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.sugerencias img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ================================
+   LOGIN Y REGISTRO
+================================ */
+.login-container {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 35px;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #5C7A4D;
+  margin-bottom: 10px;
+}
+
+.login-info, .nota-segura {
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-form label {
+  font-weight: bold;
+  color: #444;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 2px solid #8BAF6A;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.login-form input:focus {
+  border-color: #5C7A4D;
+  box-shadow: 0 0 6px rgba(92, 122, 77, 0.4);
+}
+
+.login-form button {
+  background: #5C7A4D;
+  color: white;
+  padding: 12px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background: #3f5736;
+  transform: scale(1.03);
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 15px;
+  background: #5C7A4D;
+  color: white;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .bienvenida-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .titulo-principal {
+    font-size: 1.5rem;
+  }
+
+  .login-container {
+    padding: 20px;
+  }
+
+  .imagen-bienvenida img {
+    width: 85%;
+  }
+
+
+  /* ====== Buscador ====== */
+.search-section {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  max-width: 680px;
+  margin: 18px auto;
+}
+
+.search-section h3 {
+  margin: 0 0 10px 0;
+  color: #5C7A4D;
+}
+
+#searchForm {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#searchForm input[type="search"] {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #8BAF6A;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#searchForm button {
+  background: #5C7A4D;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+
+#searchForm button:hover { transform: translateY(-2px); }
+
+#searchMessage {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.results {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+/* resultado individual */
+.result-item {
+  padding: 12px;
+  background: #F7FFF0;
+  border-radius: 10px;
+  border: 1px solid #e7efd9;
+}
+
+
 }
